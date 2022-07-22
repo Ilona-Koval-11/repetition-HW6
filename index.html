@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.0.0/modern-normalize.min.css" />
+    <link rel="stylesheet" href="./css/styles.css">
+    
+</head>
+<body class="body">
+    <form class=" form js-speaker-form">
+        <div class="form-field">
+<!--Ім"я, телефон текст пошта-->
+<label for="name">Ім'я</label>
+<input type="text" name="user-name" id="name" placeholder="Ilona Koval" autofocus>
+</div>
+<div class="form-field">
+<label for="tel">Телефон</label>
+<input type="tel" name="tel" id="tel">
+</div>
+<div class="form-field">
+  <label for="mail">Email</label>
+<input type="mail" name="mail" id="mail">
+  
+</div>
+
+        
+      
+
+
+        <!--Вибираємо теми, на котрі хочемо зробити доповідь-->
+
+        <div role="group" class="group">
+            <h2 class="group-title">Тема доповіді</h2>
+<ul class="topic-options">
+    <li>
+     <input type="checkbox" name="" value="html" id="html">
+            <label for="html">HTML</label>
+   </li>
+       <li>
+        <input type="checkbox" name="" value="css" id="css">
+            <label for="css">CSS</label>
+            </li>       
+           <li>
+            <input type="checkbox" name="" value="js" id="js">
+            <label for="js">JavaScript</label>
+           </li> 
+           </ul>
+
+          
+
+        </div>
+
+
+        <!--Вибираємо свій рівень розробника-->
+
+        <div role="group" class="group">
+            <h2 class="group-title">Рівень вашої експертизи</h2>
+        <ul class="topic-options">
+            <li>
+              <input type="radio" name="experience" value="junior" id="junior">
+<label for="junior">Junior</label>
+          </li>
+<li>
+    <input type="radio" name="experience" value="middle" id="middle">
+<label for="middle">Middle</label>
+</li>
+
+<li>
+  <input type="radio" name="experience" value="senior" id="senior">
+<label for="senior">Senior</label>  
+</li>
+
+</ul>
+        </div>
+
+
+
+
+        <!--Вибираємо на кого орієнтована доповідь-->
+
+
+        <!--Вибираємо час доповіді-->
+        <div class="form-field">
+         <!-- <input type="date" name=""  id="">
+
+        <input type="time" name="" id="">
+-->
+           
+        
+<label for="date">Дата доповіді</label> 
+        <input type="datetime-local" name="date" id="date" min="2020-04-12T12:30" max="2020-04-15T12-00" >
+        
+        </div>
+
+        
+<div class="form-field">
+    <!--Завантажуємо презентацію-->
+
+        <label for="pdf">Завантажити копію доповіді в pdf </label>
+<input type="file" name="pdf" id="pdf"> 
+</div>
+       
+<div class="form-field">
+      <!--Залишаємо коментарі-->
+
+        <label for="comment">Залиште коментар</label>
+        <textarea name="comment" id="comment" cols="30" rows="10"></textarea>
+
+</div>
+ 
+    
+        <!--Підтверджуємо політику конфіденційності-->
+
+        <input type="checkbox" name="" id="policy">
+        <label for="policy">Згідний</label>
+    <br>
+        <button type="submit">Залишити заявку</button>
+    </form>
+ 
+    
+
+
+
+        
+    <script >
+(( ) => {
+document
+.querySelector('.js-speaker-form')
+.addEventListener('submit', e => {
+    e.preventDefault();
+
+    new FormData(e.currentTarget).forEach((value, name) =>
+console.log('${name}: ${value}'),
+    );
+    e.currentTarget.reset();
+});
+})();
+</script>
+</body>
+</html>
